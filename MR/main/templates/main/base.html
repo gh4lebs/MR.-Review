@@ -38,7 +38,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">My Profile</a></li>
-                                
+
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -55,8 +55,9 @@
                         {% endif %}
 
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex" role="search" method="GET" action="{% url 'main:home' %}">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            name="title">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>

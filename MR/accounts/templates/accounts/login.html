@@ -2,28 +2,40 @@
 {% block content %}
 
 
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <h3 class="text-center">
-                Login to your account
-            </h3>
-            <form action="" method="POST">
-                {% csrf_token %}
-                <label for="username">Username</label>
-                <input type="text" placeholder="Enter your username" class="form-control" name="username">
+<html style="height: 100%;">
 
-                <label for="password">Password</label>
-                <input type="password" placeholder="Enter your password" class="form-control" name="password">
-                <br>
-                {% if error %}
-                <i style="color: red;">{{ error }}</i>
-                {% endif %}
-                <input type="submit" value="Login" class="btn btn-danger">
-            </form>
+<body style="height: 100%;">
+    <br>
+    <div class="container" style="margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;">
+        <div class="card" style="width: 600px; justify-content: center;
+        align-items: center;
+        margin: 0 auto;">
+            <div class=" card-body">
+                <h3 class="text-center">
+                    Login to your account
+                </h3>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Enter your username" class="form-control" name="username">
+
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter your password" class="form-control" name="password">
+                    <br>
+                    {% if error %}
+                    <i style="color: red;">{{ error }}</i>
+                    {% endif %}
+                    <input type="submit" value="Login" class="btn btn-danger">
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</body>
+
+</html>
 
 
 {% endblock %}
