@@ -27,9 +27,11 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
+                        {% if request.user.is_superuser %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'main:add_movies' %}">Add Movies</a>
                         </li>
+                        {% endif %}
                         {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
