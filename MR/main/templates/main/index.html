@@ -5,20 +5,21 @@
 
 <div class="container">
     <br>
-    <div class="card">
+    <div class="card border-light mb-3" style="background-color: #212528; ">
         <div class="card-body">
             <div class="row">
                 {% for movie in movies %}
                 <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body cb">
-                            <div class="text-center"><img src="{{ movie.image }}" alt="" class="img-fluid" width="75%">
+                    <div class="card border-light mb-3" style="background-color: #212528;">
+                        <div class="card-body cb ">
+                            <div class="text-center"><a href="{% url 'main:details' movie.id  %}"><img
+                                        src="{{ movie.image }}" alt="" class="img-fluid" width="75%"></a>
                             </div>
-                            <h3 class="text-center">
+                            <h4 class="text-center" style="color: antiquewhite;">
                                 {{ movie.name }}
-                            </h3>
-                            <div class="text-center"><i>{{ movie.release_date }}</i></div>
-                            <div class="text-center"><a href="{% url 'main:details' movie.id %}">Read More</a></div>
+                            </h4>
+                            <div class="text-center"><i style="color: antiquewhite;">{{ movie.release_date }}</i></div>
+
                         </div>
                     </div>
                 </div>

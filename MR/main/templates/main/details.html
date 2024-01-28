@@ -8,19 +8,22 @@
     <div class=" card">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3">
                     <img src="{{ movie.image }}" alt="{{ movie.name }}" class="img-fluid">
                 </div>
                 <div class="col-md-8">
                     <h3 class="text-center">{{ movie.name }}</h3>
-                    <p>{{ movie.description }}</p>
+                    <br>
+                    <p style="font-size: 1.2rem;">{{ movie.description }}</p>
+                    <br>
                     <h5>Director: {{movie.director}}</h5>
                     <h5>Cast: {{movie.cast}}</h5>
                     <h5>Rating: {{average}}/10</h5>
-
+                    <br>
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                    <a href="{% url 'main:edit_movies' movie.id %}" class="btn btn-warning">Edit Movie</a>
+                    <a href="{% url 'main:edit_movies' movie.id %}" class="btn btn-warning">Edit
+                        Movie</a>
                     <a href="{% url 'main:delete_movies' movie.id %}" onclick="return confirm('Are you sure?')"
                         class="btn btn-danger">Delete Movie</a>
                     {% endif %}
